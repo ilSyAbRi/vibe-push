@@ -1,0 +1,56 @@
+name: Auto Grow Flower Garden
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get current progress
+        id: get_progress
+        run: |
+          PROGRESS=$(grep -oP 'Progress: \*\*\K[0-9]+' README.md || echo "0")
+          echo "CURRENT=$PROGRESS" >> $GITHUB_ENV
+
+      - name: Increment progress
+        run: |
+          NEW=$((CURRENT + 10))
+          if [ $NEW -gt 100 ]; then NEW=100; fi
+
+          # Update progress number
+          sed -i "s/Progress: \*\*[0-9]\+\*\*/Progress: **$NEW\/100**/" README.md
+
+          # Update bar
+          FILLED=$((NEW / 10))
+          EMPTY=$((10 - FILLED))
+          BAR=$(printf '🌱%.0s' $(seq 1 $FILLED))$(printf '⚪%.0s' $(seq 1 $EMPTY))
+          sed -i "s/\[.*\] [0-9]\+%/[$BAR] $NEW%/" README.md
+
+          # Update flower emoji according to progress
+          if [ $NEW -le 10 ]; then FLOWER="🌱"
+          elif [ $NEW -le 30 ]; then FLOWER="🌿"
+          elif [ $NEW -le 50 ]; then FLOWER="🌾"
+          elif [ $NEW -le 70 ]; then FLOWER="🌷"
+          elif [ $NEW -le 90 ]; then FLOWER="🌹"
+          else FLOWER="🌸"
+          fi
+          sed -i "s/Flower: .*/Flower: $FLOWER/" README.md
+
+          # Update status
+          if [ $NEW -eq 100 ]; then
+            sed -i "s/Status: ⚠️ Keep Growing/Status: ✅ Bloomed!/" README.md
+          fi
+
+      - name: Commit updated README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "chore: garden grew to $NEW%" || echo "No changes"
+          git push
