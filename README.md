@@ -1,4 +1,4 @@
-### 🌟 Vibe Push – Weekly Growth Tracker 🌸
+# 🌟 Vibe Push – Weekly Growth Tracker 🌸
 
 <p align="center">
   
@@ -10,7 +10,7 @@
 
 <p align="center">
   
-### 🌱 Progress: **0/100** 🌱
+## 🌱 Progress: **0/100** 🌱
 
 </p>
 
@@ -42,4 +42,3 @@ Each ⚪ = 10 points remaining<br>
 When full (100) → top blooms with 🌸
 
 </p>
-
