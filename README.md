@@ -1,4 +1,4 @@
 
 <p align="center">
- 🚀 Too lazy to organize repos? Just push anything here!</a> 🌸
+ 🚀 Too lazy to organize repos? Just push anything here! 🌸
 </p>
