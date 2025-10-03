@@ -42,12 +42,12 @@ jobs:
           if [ $NEW -eq 100 ]; then
             sed -i "s/Status: ⚠️ Keep Growing/Status: ✅ Bloomed!/" README.md
           fi
-
+          
       - name: Commit updated README
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://${{ secrets.PAT_TOKEN }}@github.com/ilSyAbRi/vibe-push.git
           git add README.md
           git commit -m "chore: garden grew to $NEW%" || echo "No changes"
           git push
 
+    
