@@ -1,2 +1,15 @@
-# vibe-push
-Just push here in case I haven’t created a dedicated repository for the project or exercise yet.
+# 🌳 Weekly Growth Tracker 🌸
+
+**Goal:** Grow your week to 100 points 🌱
+
+---
+
+## 🌱 Progress: **0/100** 🌱
+
+[⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪] 0%  
+
+Flower: 🌱
+
+---
+
+### 🌼 Status: ⚠️ Keep Growing
