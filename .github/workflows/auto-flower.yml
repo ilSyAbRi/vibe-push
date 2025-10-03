@@ -32,14 +32,10 @@ jobs:
           BAR=$(printf '🌱%.0s' $(seq 1 $FILLED))$(printf '⚪%.0s' $(seq 1 $EMPTY))
           sed -i "s/\[.*\] [0-9]\+%/[$BAR] $NEW%/" README.md
 
-          # Update flower emoji according to progress
-          if [ $NEW -le 10 ]; then FLOWER="🌱"
-          elif [ $NEW -le 30 ]; then FLOWER="🌿"
-          elif [ $NEW -le 50 ]; then FLOWER="🌾"
-          elif [ $NEW -le 70 ]; then FLOWER="🌷"
-          elif [ $NEW -le 90 ]; then FLOWER="🌹"
-          else FLOWER="🌸"
-          fi
+          # Flower sequence with custom rhythm (some flowers repeat 1–3 times)
+          FLOWERS=(🌱 🌱 🌿 🌿 🌿 🌾 🌷 🌷 🌹 🌹 🌸)
+          INDEX=$((NEW / 10))
+          FLOWER=${FLOWERS[$INDEX]}
           sed -i "s/Flower: .*/Flower: $FLOWER/" README.md
 
           # Update status
@@ -54,3 +50,4 @@ jobs:
           git add README.md
           git commit -m "chore: garden grew to $NEW%" || echo "No changes"
           git push
+
