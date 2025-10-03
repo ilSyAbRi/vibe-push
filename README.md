@@ -1,10 +1,4 @@
-# 🌟 Vibe Push – Weekly Growth Tracker 🌸
 
-### 🌱 Progress: **0/100** 🌱
-
-[⚪⚪⚪⚪⚪⚪⚪⚪⚪⚪] 0%
-
-Flower: 🌱
-
-### 🌼 Status: ⚠️ Keep Growing
-
+<p align="center">
+ 🚀 Too lazy to organize repos? Just push anything here!</a> 🌸
+</p>
