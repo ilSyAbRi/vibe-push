@@ -13,25 +13,24 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-int	ft_do_sum(int count , ...)
+int	ft_do_sum(int count, ...)
 {
-	va_list args;
-	va_start(args,count);
+	va_list	args;
+	int		i;
+	int		sum;
 
-	int	i;
-	int	sum;
-
+	va_start(args, count);
 	i = 0;
 	sum = 0;
 	while (i < count)
 	{
-		sum = sum + va_arg(args,int);
-	i++;
+		sum = sum + va_arg(args, int);
+		i++;
 	}
-	return sum;
+	return (sum);
 }
 
-int main()
+int	main(void)
 {
-	printf("%d\n",ft_do_sum(5,10,10,10,10,10));
+	printf("%d\n", ft_do_sum(5, 10, 10, 10, 10, 10));
 }
