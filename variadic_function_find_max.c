@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 15:39:40 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/24 22:29:47 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/24 22:46:14 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,6 @@ int	main(void)
 	else
 		printf("%d\n", *nb);
 	free(nb);
+	nb = NULL;
+	return (0);
 }
