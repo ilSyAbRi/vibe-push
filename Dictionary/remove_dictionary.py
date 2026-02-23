@@ -9,3 +9,6 @@ print(val)
 key, val = d.popitem()
 print(f"key: {key}, Value: {val}")
 print(d)
+
+d.clear()
+print(d)
