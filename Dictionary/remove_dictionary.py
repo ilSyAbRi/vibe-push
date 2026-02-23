@@ -5,3 +5,7 @@ print(d)
 
 val = d.pop(1)
 print(val)
+
+key, val = d.popitem()
+print(f"key: {key}, Value: {val}")
+print(d)
