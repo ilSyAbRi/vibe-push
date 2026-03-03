@@ -5,3 +5,6 @@ for key in d:
 
 for value in d.values():
     print(value)
+
+for key, value in d.items():
+    print(f"{key}: {value}")
